@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+#define max 10000001
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	vector <int> soe(max,0);
+        vector <long long int> prime;
+        int printsoe[max];
+	    soe[0]=1;
+	    soe[1]=1;
+	    for(long int i=2;i*i<=max;i++)
+	    {
+	        if(soe[i]==0)
+	          {
+	              for(long int j=i*2;j<=max;j=j+i)
+	                 soe[j]=1;
+	          }
+	    }
+    for(long int i=0;i<=max;i++)
+  {
+      if(soe[i]==0)
+        {
+          prime.push_back(i);
+        }
+  }
+	while(t--)
+	{
+	    long int n;
+	    cin>>n;
+	    cout<<prime[n-1]<<endl;
+	}
+	return 0;
+}
