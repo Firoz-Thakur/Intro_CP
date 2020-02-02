@@ -1,0 +1,22 @@
+#include<iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    vector <int> soe(1000001,0);
+    soe[0]=1;
+    soe[1]=1;  //1 means not a prime
+    for(int i=2;i*i<=100000;i++)
+    {
+        if(soe[i]==0)
+           {
+            for(int j=2*i;j<=100000;j=j+i)
+                  soe[j]=1;
+            }
+    }
+for(int i=0;i<100000;i++)
+{
+	if(soe[i]==0)
+	 cout<<i<<" ";
+}
+}
