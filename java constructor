@@ -1,0 +1,42 @@
+class circle
+{
+	double radius;
+	//in java constructor can also have return type ,in that case it would be
+	//interpreted as a function
+	//if you are making parametrized constructor than java will not make the default 
+	//constructor
+	//if you are calling a constructor without having the making a defalut constructor
+	//then it will give you an error
+	void circle()
+	{
+		System.out.println("hellie/");
+	}
+	
+//	circle()
+	//{
+	//	radius=1.0;  if this code not here
+//	}
+   circle(double r)
+   {
+	   radius = r;
+   }
+  void display()
+  {
+	  System.out.println(radius);
+  }
+}
+public class constructor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+    circle c1=new circle();  -->>// its constructor is not in the circle clss
+                         //because we have already made the parameterized the constructor
+                     //hence the java will not make tha default constructor by itself
+              //if we don'nt want any error we have to write the the #constructor.circle()
+    circle c2=new circle(3.5);
+    c1.display();
+    c2.display();
+    c1.circle();
+    
+	}
+}
