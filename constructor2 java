@@ -1,0 +1,25 @@
+class Student
+{
+	int age;
+    String name;
+Student(int a,String s)
+{
+	age=a;
+	name=s;
+}
+void display()
+{
+	System.out.println(age+" "+name);
+}
+}
+public class object7 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      Student obj=new Student(23,"fiorz");
+      Student obj2=new Student(50,"baba");
+      obj.display();
+      obj2.display();
+      
+	}
+}
