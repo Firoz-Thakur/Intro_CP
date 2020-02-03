@@ -1,0 +1,41 @@
+#include <bits/stdc++.h> 
+using namespace std; 
+typedef long int d;
+d so=0,r[100001];
+ 
+void SieveOfEratosthenes(d n) 
+{ 
+    bool prime[n+1]; 
+    memset(prime, true, sizeof(prime)); 
+  
+    for (d p=2; p*p<=n; p++) 
+    { 
+        if (prime[p] == true) 
+        {   
+            for (d i=p*p; i<=n; i += p) 
+                prime[i] = false; 
+        } 
+    } 
+    for (d p=2; p<=n; p++) {
+       if (prime[p]) 
+          so++; 
+        r[p-1]=so;
+    }
+} 
+  
+// Driver Program to test above function 
+int main() 
+{ r[0]=0;
+    d i,n,t,max=-1;
+    scanf("%ld",&i);//cin>>i;
+    d f[i];
+   for(t=0;t<i;t++){
+    scanf("%ld",&f[t]);
+    if(max<f[t])
+    max=f[t];
+    }
+    SieveOfEratosthenes(max);
+    for(t=0;t<i;t++)
+    printf("%ld\n",r[f[t]-1]);//cout<<r[f[t]-1]<<endl;
+    return 0; 
+}   
