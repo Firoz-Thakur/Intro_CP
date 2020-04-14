@@ -22,5 +22,4 @@ public class object4 {
 		  System.out.println();
 		}
 	}
-
 }
